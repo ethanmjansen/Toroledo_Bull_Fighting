@@ -1,1 +1,3 @@
-# Toroledo_Bull_Fighting
+# Toroledo_Bull_Fighting  
+
+Toroledo Bull Fighting is in homage to a Sony PlayStation title from 2000 called Alundra 2: A New Legend Begins. In the early stages of the game, there is a bull fighting mini game where you bet money on bulls who fight in a bracket style tournament. Having spent hours envisioning these bulls fighting each other and making thousands of in game currency, I wanted to make a similar style python application for personal enjoyment. 
