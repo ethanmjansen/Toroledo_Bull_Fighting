@@ -23,12 +23,15 @@ def make_bulls():
     'Bullty': Bull('Bullty', 6, 3, 9, 9), 
     'Chips': Bull('Chips', 1, 1, 1, 1)
     }
+
+    for bull in bulls.values():
+        bull.pick_status()
+    
     return bulls
 
 if __name__ == "__main__":
     """Proof of Concept"""
     bulls = make_bulls()
     for bull in bulls.values():
-        bull.pick_status()
         print(f'{bull}\n')
 
