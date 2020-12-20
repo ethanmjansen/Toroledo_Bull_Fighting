@@ -1,6 +1,7 @@
 from bull import Bull
 
-bulls = {
+def make_bulls():
+    bulls = {
     'Mooses' : Bull('Mooses', 7, 6, 4, 8),
     'Buster': Bull('Buster', 5, 2, 9, 6),
     'T-Bone': Bull('T-Bone', 8, 5, 8, 7),
@@ -21,10 +22,12 @@ bulls = {
     'Bull Nye': Bull('Bull Nye', 7, 7, 7, 7), 
     'Bullty': Bull('Bullty', 6, 3, 9, 9), 
     'Chips': Bull('Chips', 1, 1, 1, 1)
-}
+    }
+    return bulls
 
 if __name__ == "__main__":
     """Proof of Concept"""
+    bulls = make_bulls()
     for bull in bulls.values():
         bull.pick_status()
         print(f'{bull}\n')
