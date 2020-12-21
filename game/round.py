@@ -67,7 +67,9 @@ class Round():
             self.loser = self.bull_2
         else:
             self.winner = self.bull_2
-            self.loser = self.bull_1         
+            self.loser = self.bull_1       
+        
+        return self.winner  
 
     def __str__(self):
         return f'{self.bull_1},\n{self.bull_2}'

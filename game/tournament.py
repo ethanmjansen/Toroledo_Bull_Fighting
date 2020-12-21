@@ -1,5 +1,6 @@
 from bull_pen import make_bulls
 import random
+from round import Round
 
 class Tournament():
     def __init__(self, bulls):
@@ -17,16 +18,53 @@ class Tournament():
         return self.bracket
 
     def elite_eight(self):
-        pass
+        
+        round_1 = Round(bulls[self.bracket[0]], bulls[self.bracket[1]])
+        round_2 = Round(bulls[self.bracket[2]], bulls[self.bracket[3]])
+        round_3 = Round(bulls[self.bracket[4]], bulls[self.bracket[5]])
+        round_4 = Round(bulls[self.bracket[6]], bulls[self.bracket[7]])
+        
+        winner_1 = round_1.fight()
+        winner_2 = round_2.fight()
+        winner_3 = round_3.fight()
+        winner_4 = round_4.fight()
+
+        self.bracket = []
+        self.bracket.append(winner_1.name)
+        self.bracket.append(winner_2.name)
+        self.bracket.append(winner_3.name)
+        self.bracket.append(winner_4.name)
+
+        return self.bracket
 
     def final_four(self):
-        pass
+        round_1 = Round(bulls[self.bracket[0]], bulls[self.bracket[1]])
+        round_2 = Round(bulls[self.bracket[2]], bulls[self.bracket[3]])
+        
+        winner_1 = round_1.fight()
+        winner_2 = round_2.fight()
+
+        self.bracket = []
+        self.bracket.append(winner_1.name)
+        self.bracket.append(winner_2.name)
+
+        return self.bracket
     
     def championship(self):
-        pass
+        round_1 = Round(bulls[self.bracket[0]], bulls[self.bracket[1]])
+        
+        winner_1 = round_1.fight()
+
+
+        self.bracket = []
+        self.bracket.append(winner_1.name)
+
+        return self.bracket
 
 if __name__ == "__main__":
     bulls = make_bulls()
     tournament = Tournament(bulls)
     print(tournament.make_bracket())
-
+    print(tournament.elite_eight())
+    print(tournament.final_four())
+    print(tournament.championship())
