@@ -1,4 +1,6 @@
 class Player():
+    """Abstract player Class"""
+    
     def __init__(self, purse):
         self.purse = purse
         self.win_streak = 0
@@ -40,4 +42,3 @@ if __name__ == "__main__":
     print(player)
     print(player.lose(150, 'Chips'))
     print(player)
-

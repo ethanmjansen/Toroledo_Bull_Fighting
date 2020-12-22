@@ -1,7 +1,8 @@
 import random
 
 class Bull():
-    """Abstract Bull class"""
+    """Abstract Bull Class"""
+    
     def __init__(self, name=None, P=None, S=None, Q=None, L=None):
         self.name = name
         

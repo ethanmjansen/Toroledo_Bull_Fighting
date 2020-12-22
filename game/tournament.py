@@ -3,6 +3,8 @@ import random
 from round import Round
 
 class Tournament():
+    """Abstract Tournament Class"""
+    
     def __init__(self, bulls):
         self.bulls = bulls
 
@@ -18,7 +20,6 @@ class Tournament():
         return self.bracket
 
     def elite_eight(self):
-        
         round_1 = Round(bulls[self.bracket[0]], bulls[self.bracket[1]])
         round_2 = Round(bulls[self.bracket[2]], bulls[self.bracket[3]])
         round_3 = Round(bulls[self.bracket[4]], bulls[self.bracket[5]])
@@ -34,7 +35,7 @@ class Tournament():
         self.bracket.append(winner_2.name)
         self.bracket.append(winner_3.name)
         self.bracket.append(winner_4.name)
-
+        print('\n')
         return self.bracket
 
     def final_four(self):
@@ -47,7 +48,7 @@ class Tournament():
         self.bracket = []
         self.bracket.append(winner_1.name)
         self.bracket.append(winner_2.name)
-
+        print('\n')
         return self.bracket
     
     def championship(self):
@@ -55,10 +56,9 @@ class Tournament():
         
         winner_1 = round_1.fight()
 
-
         self.bracket = []
         self.bracket.append(winner_1.name)
-
+        print('\n')
         return self.bracket
 
 if __name__ == "__main__":

@@ -1,6 +1,7 @@
 from bull import Bull
 
 def make_bulls():
+    # Makes bulls and picks their status
     bulls = {
     'Mooses' : Bull('Mooses', 7, 6, 4, 8),
     'Buster': Bull('Buster', 5, 2, 9, 6),

@@ -2,9 +2,11 @@ import random
 from bull_pen import make_bulls
 
 def d20():
+    # Rolls a D20
     return random.randint(0,20)
 
 def d4():
+    # Rolls a D4
     return random.randint(0,4)
 
 class Round():
@@ -41,9 +43,11 @@ class Round():
         if self.bull_2.altPSQL[1] < 1:
             self.winner = self.bull_1
             self.loser = self.bull_2
-        else:
+            print(f'{self.bull_2.name} trips on the way to the fight and is hospitalized')
+        elif self.bull_1.altPSQL[1] < 1:
             self.winner = self.bull_2
             self.loser = self.bull_1
+            print(f'{self.bull_1.name} trips on the way to the fight and is hospitalized')
         
         # Main fight loop
         while self.bull_1.altPSQL[1] > 0 and self.bull_2.altPSQL[1] > 0:
@@ -82,5 +86,3 @@ if __name__ == "__main__":
     match = Round(bull_1, bull_2)
     print(match)
     match.fight()
-    print(match.winner.name)
-
