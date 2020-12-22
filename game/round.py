@@ -1,13 +1,6 @@
-import random
 from bull_pen import make_bulls
-
-def d20():
-    # Rolls a D20
-    return random.randint(0,20)
-
-def d4():
-    # Rolls a D4
-    return random.randint(0,4)
+from utils import d20, d4
+import random
 
 class Round():
     """Abstract Round class"""

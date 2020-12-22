@@ -11,7 +11,7 @@ class Tournament():
     def make_bracket(self):
         bracket = []
 
-        for bull in bulls.keys():
+        for bull in self.bulls.keys():
             bracket.append(bull)
 
         random.shuffle(bracket)
@@ -20,10 +20,10 @@ class Tournament():
         return self.bracket
 
     def elite_eight(self):
-        round_1 = Round(bulls[self.bracket[0]], bulls[self.bracket[1]])
-        round_2 = Round(bulls[self.bracket[2]], bulls[self.bracket[3]])
-        round_3 = Round(bulls[self.bracket[4]], bulls[self.bracket[5]])
-        round_4 = Round(bulls[self.bracket[6]], bulls[self.bracket[7]])
+        round_1 = Round(self.bulls[self.bracket[0]], self.bulls[self.bracket[1]])
+        round_2 = Round(self.bulls[self.bracket[2]], self.bulls[self.bracket[3]])
+        round_3 = Round(self.bulls[self.bracket[4]], self.bulls[self.bracket[5]])
+        round_4 = Round(self.bulls[self.bracket[6]], self.bulls[self.bracket[7]])
         
         winner_1 = round_1.fight()
         winner_2 = round_2.fight()
@@ -39,8 +39,8 @@ class Tournament():
         return self.bracket
 
     def final_four(self):
-        round_1 = Round(bulls[self.bracket[0]], bulls[self.bracket[1]])
-        round_2 = Round(bulls[self.bracket[2]], bulls[self.bracket[3]])
+        round_1 = Round(self.bulls[self.bracket[0]], self.bulls[self.bracket[1]])
+        round_2 = Round(self.bulls[self.bracket[2]], self.bulls[self.bracket[3]])
         
         winner_1 = round_1.fight()
         winner_2 = round_2.fight()
@@ -52,7 +52,7 @@ class Tournament():
         return self.bracket
     
     def championship(self):
-        round_1 = Round(bulls[self.bracket[0]], bulls[self.bracket[1]])
+        round_1 = Round(self.bulls[self.bracket[0]], self.bulls[self.bracket[1]])
         
         winner_1 = round_1.fight()
 
