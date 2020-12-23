@@ -39,12 +39,12 @@ press Y, if no press N.
 --> """
     )
 
-    if selection == 'N':
+    if selection in ('N', 'n', 'No', 'no'):
         clear_terminal()
         print(f'Thank you for playing!\nUntil next time...')
         break
 
-    if selection == 'Y':
+    if selection in ('Y', 'y', 'Yes', 'yes'):
         #Make bulls and set tournament class
         bulls = make_bulls()
         tournament = Tournament(bulls)
@@ -53,3 +53,6 @@ press Y, if no press N.
         print(tournament.elite_eight())
         print(tournament.final_four())
         print(tournament.championship())
+
+    else:
+      print('That is not a valid command.')
