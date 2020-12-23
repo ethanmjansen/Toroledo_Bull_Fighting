@@ -36,9 +36,15 @@ while True:
         """
 Would you like to run a tournament? If yes 
 press Y, if no press N.
---->"""
+--> """
     )
-    if selection == 'Y' or 'y':
+
+    if selection == 'N':
+        clear_terminal()
+        print(f'Thank you for playing!\nUntil next time...')
+        break
+
+    if selection == 'Y':
         #Make bulls and set tournament class
         bulls = make_bulls()
         tournament = Tournament(bulls)
@@ -47,5 +53,3 @@ press Y, if no press N.
         print(tournament.elite_eight())
         print(tournament.final_four())
         print(tournament.championship())
-
-
